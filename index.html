@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Faraway — find the place that's calling you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=43" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#">
+      <span class="nav__mark">✺</span>
+      <span class="nav__name">Faraway</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#bento">Destinations</a>
+      <a href="#">Stories</a>
+      <a href="#">Journal</a>
+      <a href="#">About</a>
+    </nav>
+    <div class="nav__right">
+      <button class="btn btn--ghost">Sign in</button>
+      <button class="btn btn--dark">Start planning</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__bg-slide hero__bg-slide--1"></div>
+      <div class="hero__bg-slide hero__bg-slide--2"></div>
+      <div class="hero__bg-slide hero__bg-slide--3"></div>
+      <div class="hero__scrim"></div>
+    </div>
+
+    <div class="hero__inner">
+      <p class="eyebrow">Plan a trip the slow way</p>
+      <h1 class="hero__title">
+        Where is the <em>world</em><br />calling you?
+      </h1>
+      <p class="hero__lede">
+        Start with a feeling. We'll figure out the dates later.
+      </p>
+
+      <!-- Planner -->
+      <section class="planner" id="planner">
+        <!-- Steps track -->
+        <ol class="planner__track" aria-label="Planner progress">
+          <li data-progress="1"><span>01</span> Vibe</li>
+          <li data-progress="2"><span>02</span> Where</li>
+          <li data-progress="3"><span>03</span> When</li>
+        </ol>
+
+        <div class="planner__stage">
+
+          <!-- Step 1: Vibe -->
+          <div class="step is-active" data-step="1">
+            <h2 class="step__q">What are you in the mood for?</h2>
+            <div class="vibe-grid">
+              <button class="vibe vibe--warm" data-vibe="warm">
+                <div class="vibe__art" data-art="warm"></div>
+                <div class="vibe__body">
+                  <h3>Somewhere warm</h3>
+                  <p>Sand between toes, long afternoons, a cold drink.</p>
+                </div>
+              </button>
+              <button class="vibe vibe--city" data-vibe="city">
+                <div class="vibe__art" data-art="city"></div>
+                <div class="vibe__body">
+                  <h3>A city break</h3>
+                  <p>Cafés, museums, walking until your feet ache.</p>
+                </div>
+              </button>
+              <button class="vibe vibe--cold" data-vibe="cold">
+                <div class="vibe__art" data-art="cold"></div>
+                <div class="vibe__body">
+                  <h3>Somewhere cold</h3>
+                  <p>Thick sweaters, low sun, snow that squeaks.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2A: Warm — continent -->
+          <div class="step" data-step="2" data-branch="warm">
+            <h2 class="step__q">Which corner of the world?</h2>
+            <div class="chip-grid">
+              <button class="chip" data-region="mediterranean">
+                <span class="chip__emoji">☀</span>
+                <span class="chip__label">The Mediterranean</span>
+                <span class="chip__hint">Greece · Italy · Spain</span>
+              </button>
+              <button class="chip" data-region="se-asia">
+                <span class="chip__emoji">🌴</span>
+                <span class="chip__label">Southeast Asia</span>
+                <span class="chip__hint">Bali · Thailand · Vietnam</span>
+              </button>
+              <button class="chip" data-region="caribbean">
+                <span class="chip__emoji">🐚</span>
+                <span class="chip__label">Caribbean & Central America</span>
+                <span class="chip__hint">Mexico · Belize · Barbados</span>
+              </button>
+              <button class="chip" data-region="africa-warm">
+                <span class="chip__emoji">🦁</span>
+                <span class="chip__label">Africa</span>
+                <span class="chip__hint">Morocco · Kenya · Zanzibar</span>
+              </button>
+              <button class="chip" data-region="oceania">
+                <span class="chip__emoji">🪸</span>
+                <span class="chip__label">Oceania & the Pacific</span>
+                <span class="chip__hint">Fiji · Australia · French Polynesia</span>
+              </button>
+              <button class="chip" data-region="south-america-warm">
+                <span class="chip__emoji">🌺</span>
+                <span class="chip__label">South America</span>
+                <span class="chip__hint">Brazil · Colombia · Peru</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2B: City — continent -->
+          <div class="step" data-step="2" data-branch="city">
+            <h2 class="step__q">What kind of city do you want to get lost in?</h2>
+            <div class="chip-grid">
+              <button class="chip" data-region="europe-city">
+                <span class="chip__emoji">🏛</span>
+                <span class="chip__label">Old Europe</span>
+                <span class="chip__hint">Lisbon · Paris · Rome</span>
+              </button>
+              <button class="chip" data-region="asia-city">
+                <span class="chip__emoji">🏮</span>
+                <span class="chip__label">Asia</span>
+                <span class="chip__hint">Tokyo · Seoul · Bangkok</span>
+              </button>
+              <button class="chip" data-region="americas-city">
+                <span class="chip__emoji">🌃</span>
+                <span class="chip__label">The Americas</span>
+                <span class="chip__hint">New York · Mexico City · Buenos Aires</span>
+              </button>
+              <button class="chip" data-region="mideast-city">
+                <span class="chip__emoji">🕌</span>
+                <span class="chip__label">Middle East</span>
+                <span class="chip__hint">Istanbul · Amman · Beirut</span>
+              </button>
+              <button class="chip" data-region="africa-city">
+                <span class="chip__emoji">🧿</span>
+                <span class="chip__label">Africa</span>
+                <span class="chip__hint">Marrakech · Cape Town · Cairo</span>
+              </button>
+              <button class="chip" data-region="oceania-city">
+                <span class="chip__emoji">🌉</span>
+                <span class="chip__label">Oceania</span>
+                <span class="chip__hint">Sydney · Auckland · Melbourne</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2C: Cold — activity -->
+          <div class="step" data-step="2" data-branch="cold">
+            <h2 class="step__q">What's calling you to the cold?</h2>
+            <div class="activity-grid">
+              <button class="activity" data-activity="ski">
+                <div class="activity__art" data-art="ski"></div>
+                <h3>Ski & snowboard</h3>
+                <p>Alps, Hokkaido, the Dolomites. Long days, long dinners.</p>
+              </button>
+              <button class="activity" data-activity="wildlife">
+                <div class="activity__art" data-art="wildlife"></div>
+                <h3>Arctic wildlife</h3>
+                <p>Svalbard, Churchill, Antarctica — go to see, not to do.</p>
+              </button>
+              <button class="activity" data-activity="aurora">
+                <div class="activity__art" data-art="aurora"></div>
+                <h3>Chase the northern lights</h3>
+                <p>Tromsø, Iceland, Finnish Lapland. Stay out late.</p>
+              </button>
+              <button class="activity" data-activity="cabin">
+                <div class="activity__art" data-art="cabin"></div>
+                <h3>A cabin, a fire, a book</h3>
+                <p>Faroe Islands, Patagonia, the Scottish Highlands.</p>
+              </button>
+              <button class="activity" data-activity="sport">
+                <div class="activity__art" data-art="sport"></div>
+                <h3>Something more active</h3>
+                <p>Ice climbing, dogsledding, splitboarding off the grid.</p>
+              </button>
+              <button class="activity" data-activity="city-cold">
+                <div class="activity__art" data-art="city-cold"></div>
+                <h3>A cold, cozy city</h3>
+                <p>Reykjavík, Tallinn, Québec. Hot drinks, heavy coats.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Timeline -->
+          <div class="step step--timeline" data-step="3">
+            <div class="step__header">
+              <h2 class="step__q">When could you slip away?</h2>
+              <p class="step__sub">Drag the ends to stretch or shrink the trip. Drag the middle to move the whole thing.</p>
+            </div>
+
+            <div class="timeline" id="timeline">
+              <div class="timeline__readout">
+                <div class="timeline__dates">
+                  <div class="timeline__date">
+                    <span class="timeline__date-label">
+                      <i data-lucide="plane-takeoff" class="timeline__date-label-icon" aria-hidden="true"></i>
+                      Leaving
+                    </span>
+                    <output class="timeline__date-display" id="tl-start-display">Tue, May 19</output>
+                    <div class="timeline__dmy">
+                      <label class="timeline__dmy-group">
+                        <input class="timeline__dmy-input" id="tl-start-d" inputmode="numeric" maxlength="2" aria-label="Start day" />
+                        <span class="timeline__dmy-label">d</span>
+                      </label>
+                      <label class="timeline__dmy-group">
+                        <input class="timeline__dmy-input" id="tl-start-m" inputmode="numeric" maxlength="2" aria-label="Start month" />
+                        <span class="timeline__dmy-label">m</span>
+                      </label>
+                      <label class="timeline__dmy-group timeline__dmy-group--y">
+                        <input class="timeline__dmy-input timeline__dmy-input--y" id="tl-start-y" inputmode="numeric" maxlength="2" aria-label="Start year" />
+                        <span class="timeline__dmy-label">y</span>
+                      </label>
+                    </div>
+                    <input type="hidden" id="tl-start" name="start_date" />
+                  </div>
+                  <div class="timeline__dash">→</div>
+                  <div class="timeline__date">
+                    <span class="timeline__date-label">
+                      <i data-lucide="plane-landing" class="timeline__date-label-icon" aria-hidden="true"></i>
+                      Returning
+                    </span>
+                    <output class="timeline__date-display" id="tl-end-display">Tue, May 26</output>
+                    <div class="timeline__dmy">
+                      <label class="timeline__dmy-group">
+                        <input class="timeline__dmy-input" id="tl-end-d" inputmode="numeric" maxlength="2" aria-label="End day" />
+                        <span class="timeline__dmy-label">d</span>
+                      </label>
+                      <label class="timeline__dmy-group">
+                        <input class="timeline__dmy-input" id="tl-end-m" inputmode="numeric" maxlength="2" aria-label="End month" />
+                        <span class="timeline__dmy-label">m</span>
+                      </label>
+                      <label class="timeline__dmy-group timeline__dmy-group--y">
+                        <input class="timeline__dmy-input timeline__dmy-input--y" id="tl-end-y" inputmode="numeric" maxlength="2" aria-label="End year" />
+                        <span class="timeline__dmy-label">y</span>
+                      </label>
+                    </div>
+                    <input type="hidden" id="tl-end" name="end_date" />
+                  </div>
+                  <div class="timeline__travellers">
+                    <span class="timeline__date-label">Travellers</span>
+                    <output class="timeline__travellers-display" id="tl-people-display">
+                      <span class="timeline__travellers-icon" id="tl-travellers-icon" aria-hidden="true"></span>
+                      <span class="timeline__travellers-unit">travellers</span>
+                    </output>
+                    <div class="timeline__people-controls" role="group" aria-label="Adjust travellers">
+                      <button type="button" class="timeline__people-btn" id="tl-people-minus" aria-label="Fewer">
+                        <i data-lucide="minus"></i>
+                      </button>
+                      <span class="timeline__people-count" id="tl-people-count" aria-live="polite">2</span>
+                      <button type="button" class="timeline__people-btn" id="tl-people-plus" aria-label="More">
+                        <i data-lucide="plus"></i>
+                      </button>
+                    </div>
+                    <input type="hidden" id="tl-people" name="travellers" value="2" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline__viewport" id="tl-viewport">
+                <div class="timeline__track" id="tl-track">
+                  <div class="timeline__months" id="tl-months"></div>
+                  <div class="timeline__ruler" id="tl-ruler"></div>
+                  <div class="timeline__selection" id="tl-selection">
+                    <div class="timeline__handle timeline__handle--start" id="tl-handle-start" aria-label="Start date"></div>
+                    <div class="timeline__selection-readout" id="tl-selection-readout">
+                      <span class="timeline__selection-num" id="tl-grip-label">7</span>
+                      <span class="timeline__selection-unit">days</span>
+                      <span class="timeline__selection-people" id="tl-selection-people" aria-hidden="true">
+                        <span class="timeline__selection-people-icon" id="tl-selection-people-icon"></span>
+                        <span class="timeline__selection-people-num" id="tl-selection-people-num">2</span>
+                      </span>
+                    </div>
+                    <div class="timeline__handle timeline__handle--end" id="tl-handle-end" aria-label="End date"></div>
+                  </div>
+                  <div class="timeline__today" id="tl-today"><span>today</span></div>
+                </div>
+              </div>
+
+              <div class="timeline__hint">
+                <span>↤ scroll the timeline ↦</span>
+                <span>· auto-zooms around your trip ·</span>
+                <span>drag handle for exact day</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky summary / actions -->
+        <footer class="planner__footer">
+          <div class="planner__summary" id="planner-summary">
+            <span class="planner__summary-dot"></span>
+            <span id="summary-text">Pick a vibe to begin</span>
+          </div>
+          <div class="planner__actions">
+            <button class="btn btn--ghost" id="btn-back" disabled>← Back</button>
+            <button class="btn btn--dark" id="btn-next" disabled>Next →</button>
+          </div>
+        </footer>
+      </section>
+    </div>
+  </section>
+
+  <!-- ============== BENTO ============== -->
+  <section class="bento-section" id="bento">
+    <div class="bento-section__head">
+      <p class="eyebrow">Places people keep going back to</p>
+      <h2 class="section-title">The world, laid out like a scrapbook.</h2>
+      <p class="section-lede">
+        A loose, opinionated list. Tap any tile to open the story.
+      </p>
+    </div>
+
+    <div class="bento">
+      <!-- Tile sizes: s (1×1), w (2×1), t (1×2), b (2×2) -->
+      <article class="tile tile--b" data-photo="lofoten">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Norway</p>
+          <h3 class="tile__title">Lofoten in blue hour</h3>
+          <p class="tile__meta">Fishing cabins · above the arctic circle</p>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="santorini">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Greece</p>
+          <h3 class="tile__title">Oia, just after sunset</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--t" data-photo="kyoto">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Japan</p>
+          <h3 class="tile__title">Kyoto when the maples turn</h3>
+          <p class="tile__meta">Philosopher's path · November</p>
+        </div>
+      </article>
+
+      <article class="tile tile--w" data-photo="patagonia">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Chile · Argentina</p>
+          <h3 class="tile__title">Patagonia, end of the world</h3>
+          <p class="tile__meta">Torres del Paine · Fitz Roy</p>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="amalfi">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Italy</p>
+          <h3 class="tile__title">A lemon above Amalfi</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="marrakech">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Morocco</p>
+          <h3 class="tile__title">Late light in the medina</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--t" data-photo="bali">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Indonesia</p>
+          <h3 class="tile__title">Rice terraces before the rain</h3>
+          <p class="tile__meta">Tegallalang · Ubud</p>
+        </div>
+      </article>
+
+      <article class="tile tile--w" data-photo="iceland">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Iceland</p>
+          <h3 class="tile__title">A ring road and nobody else on it</h3>
+          <p class="tile__meta">Mid-winter · aurora season</p>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="tokyo">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Japan</p>
+          <h3 class="tile__title">Tokyo, a weeknight</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--b" data-photo="dolomites">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Italy</p>
+          <h3 class="tile__title">Dolomites, first snow</h3>
+          <p class="tile__meta">Cortina · Alta Badia · Tre Cime</p>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="svalbard">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Svalbard</p>
+          <h3 class="tile__title">78° north</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--t" data-photo="faroe">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Faroe Islands</p>
+          <h3 class="tile__title">A cottage at the edge of a cliff</h3>
+          <p class="tile__meta">Saksun · Gásadalur</p>
+        </div>
+      </article>
+
+      <article class="tile tile--w" data-photo="safari">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Kenya</p>
+          <h3 class="tile__title">The Mara, just before the rains</h3>
+          <p class="tile__meta">Great migration · July – October</p>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="lisbon">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Portugal</p>
+          <h3 class="tile__title">Lisbon in yellow</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="maldives">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Maldives</p>
+          <h3 class="tile__title">Water that isn't real</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--s" data-photo="machu">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Peru</p>
+          <h3 class="tile__title">Machu Picchu at 6am</h3>
+        </div>
+      </article>
+
+      <article class="tile tile--w" data-photo="alps">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Switzerland</p>
+          <h3 class="tile__title">A slow train through the Alps</h3>
+          <p class="tile__meta">Glacier Express · winter</p>
+        </div>
+      </article>
+
+      <article class="tile tile--t" data-photo="morocco-desert">
+        <div class="tile__caption">
+          <p class="tile__eyebrow">Morocco</p>
+          <h3 class="tile__title">A night in the Sahara</h3>
+          <p class="tile__meta">Erg Chebbi · Merzouga</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER CTA ============== -->
+  <section class="closing">
+    <div class="closing__inner">
+      <h2>Everything is closer than you think.</h2>
+      <p>Build a quiet plan. Keep it to yourself. Go anyway.</p>
+      <button class="btn btn--dark btn--large" onclick="document.getElementById('planner').scrollIntoView({behavior:'smooth'})">Start planning →</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <span class="nav__mark">✺</span>
+      <span class="nav__name">Faraway</span>
+      <p>A slow-travel notebook. Made with care.</p>
+    </div>
+    <div class="foot__cols">
+      <div>
+        <h4>Explore</h4>
+        <a href="#">Destinations</a>
+        <a href="#">Stories</a>
+        <a href="#">Seasons</a>
+      </div>
+      <div>
+        <h4>The paper</h4>
+        <a href="#">Journal</a>
+        <a href="#">Field notes</a>
+        <a href="#">Newsletter</a>
+      </div>
+      <div>
+        <h4>Us</h4>
+        <a href="#">About</a>
+        <a href="#">Values</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot__base">
+    <span>© Faraway 2026 · Somewhere, everywhere</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="app.js?v=42"></script>
+</body>
+</html>

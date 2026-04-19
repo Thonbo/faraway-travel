@@ -1,0 +1,9 @@
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Netlify
+.netlify/
