@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Condensed · High-Contrast · Bold & Black Sans</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Big+Shoulders+Text:wght@700;900&family=Big+Shoulders+Inline+Display:wght@700;900&family=Big+Shoulders+Inline+Text:wght@700;900&family=Big+Shoulders+Stencil+Display:wght@700;900&family=Big+Shoulders+Stencil+Text:wght@700;900&family=Passion+One:wght@700;900&family=Saira+Condensed:wght@700;900&family=Archivo+Narrow:wght@700&family=Anton&family=Oswald:wght@300;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --card: #131519;
+    --card-hover: #191c22;
+    --border: #23272f;
+    --text: #f4f5f7;
+    --muted: #868c98;
+    --accent: #ff3d5a;
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 80px 28px 30px;
+    text-align: center;
+  }
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  header h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.86;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  header h1 span { color: var(--accent); }
+  header p {
+    color: var(--muted);
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    max-width: 640px;
+    margin: 0 auto;
+    letter-spacing: 0.01em;
+  }
+
+  .grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 28px 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #38404d;
+    background: var(--card-hover);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-transform: uppercase;
+  }
+  .num {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-weight: 400;
+  }
+
+  .specimen {
+    font-size: clamp(3.4rem, 8vw, 4.6rem);
+    line-height: 0.86;
+    text-transform: uppercase;
+    word-break: break-word;
+    margin: 4px 0;
+  }
+
+  /* contrast meter */
+  .meter { display: flex; align-items: center; gap: 8px; }
+  .meter .bars { display: flex; gap: 3px; }
+  .meter .bars i {
+    width: 16px; height: 6px; border-radius: 2px;
+    background: #2a2f38; display: block;
+  }
+  .meter .bars i.on { background: var(--accent); }
+  .meter span {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .meta { margin-top: auto; }
+  .name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .desc {
+    color: var(--muted);
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    text-transform: none;
+  }
+
+  .import {
+    display: flex; align-items: center; gap: 8px;
+    background: #0a0b0d;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 7px 9px;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+  }
+  .import code {
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+  }
+  .copy {
+    background: var(--accent); color: #0a0b0d; border: none; border-radius: 6px;
+    padding: 5px 11px; font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase;
+    cursor: pointer; flex-shrink: 0; transition: opacity .2s;
+  }
+  .copy:hover { opacity: 0.85; }
+  .copy.done { background: #35d69a; }
+
+  .note {
+    max-width: 1180px; margin: 0 auto; padding: 0 28px 90px;
+    color: var(--muted); font-weight: 300; font-size: 0.92rem;
+    line-height: 1.6; text-align: center;
+  }
+  .note b { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Condensed · Sans-Serif · Bold &amp; Black</div>
+  <h1>Go Big<span>.</span> Go Bold<span>.</span></h1>
+  <p>Twenty condensed, serif-free typefaces at Bold (700) or Black (900) weight — tall, heavy, poster-ready. All free on Google Fonts, sorted by how much stroke contrast survives at full weight.</p>
+</header>
+
+<main class="grid" id="grid"></main>
+
+<p class="note">
+  Honesty check: <b>stroke contrast naturally compresses as weight goes up</b> — that's physics, not a font flaw. At Bold/Black, strokes thicken toward each other and the thin/thick difference shrinks versus a Thin or Light cut. The <b>Big Shoulders</b> family (especially its Inline and Stencil styles) keeps the most visible contrast even at 900, so it leads this list. The bottom entries — Anton, Bebas Neue, Oswald, Saira Condensed — are near-monoline at this weight: rock-solid, extremely popular condensed bold sans, just honestly low on contrast.
+</p>
+
+<script>
+// contrast: 1 (monoline) – 5 (extreme, even at this weight)
+const fonts = [
+  { fam:"'Big Shoulders Inline Display', sans-serif", w:900, name:'Big Shoulders Inline Display', tag:'Inline · Black', word:'Marquee', c:5, desc:'The carved inline seam keeps dramatic contrast alive even at full Black weight.', q:'Big+Shoulders+Inline+Display:wght@900' },
+  { fam:"'Big Shoulders Inline Display', sans-serif", w:700, name:'Big Shoulders Inline Display', tag:'Inline · Bold', word:'Relief', c:5, desc:'Same carved-line trick at Bold — a bright stripe splits every stroke for punchy signage.', q:'Big+Shoulders+Inline+Display:wght@700' },
+  { fam:"'Big Shoulders Inline Text', sans-serif", w:900, name:'Big Shoulders Inline Text', tag:'Inline · Black', word:'Ticket', c:4, desc:'Text-optimised inline cut — holds contrast at smaller sizes for labels and tags.', q:'Big+Shoulders+Inline+Text:wght@900' },
+  { fam:"'Big Shoulders Inline Text', sans-serif", w:700, name:'Big Shoulders Inline Text', tag:'Inline · Bold', word:'Crate', c:4, desc:'A bold, readable inline face for captions that still want visual bite.', q:'Big+Shoulders+Inline+Text:wght@700' },
+  { fam:"'Big Shoulders Stencil Display', sans-serif", w:900, name:'Big Shoulders Stencil Display', tag:'Stencil · Black', word:'Cargo', c:4, desc:'Stencil breaks plus dense weight — industrial, military-poster energy at max heft.', q:'Big+Shoulders+Stencil+Display:wght@900' },
+  { fam:"'Big Shoulders Stencil Display', sans-serif", w:700, name:'Big Shoulders Stencil Display', tag:'Stencil · Bold', word:'Freight', c:4, desc:'Heavy stencil display, slightly lighter than Black but still loud and gritty.', q:'Big+Shoulders+Stencil+Display:wght@700' },
+  { fam:"'Big Shoulders Display', sans-serif", w:700, name:'Big Shoulders Display', tag:'Display · Bold', word:'Impact', c:4, desc:'The family workhorse at Bold — confident headlines that still read as high-contrast.', q:'Big+Shoulders+Display:wght@700' },
+  { fam:"'Big Shoulders Display', sans-serif", w:900, name:'Big Shoulders Display', tag:'Display · Black', word:'Heavy', c:3, desc:'Maxed-out weight. Contrast compresses but the family DNA is still visible.', q:'Big+Shoulders+Display:wght@900' },
+  { fam:"'Big Shoulders Stencil Text', sans-serif", w:900, name:'Big Shoulders Stencil Text', tag:'Stencil · Black', word:'Vault', c:3, desc:'Small-size stencil at full weight — utility labels with an industrial edge.', q:'Big+Shoulders+Stencil+Text:wght@900' },
+  { fam:"'Big Shoulders Stencil Text', sans-serif", w:700, name:'Big Shoulders Stencil Text', tag:'Stencil · Bold', word:'Depot', c:3, desc:'A calmer stencil weight for tags, badges and tech-brand chrome.', q:'Big+Shoulders+Stencil+Text:wght@700' },
+  { fam:"'Big Shoulders Text', sans-serif", w:700, name:'Big Shoulders Text', tag:'Text · Bold', word:'Ledger', c:3, desc:'Bold text cut of the family — tall, tight and still visibly contrasted.', q:'Big+Shoulders+Text:wght@700' },
+  { fam:"'Big Shoulders Text', sans-serif", w:900, name:'Big Shoulders Text', tag:'Text · Black', word:'Column', c:2, desc:'Full Black weight for a text-sized cut — dense and sturdy, contrast mostly flattened.', q:'Big+Shoulders+Text:wght@900' },
+  { fam:"'Passion One', sans-serif", w:900, name:'Passion One', tag:'Rounded · Black', word:'Bounce', c:3, desc:'A chunky rounded condensed sans with real stroke modulation baked into the design.', q:'Passion+One:wght@900' },
+  { fam:"'Passion One', sans-serif", w:700, name:'Passion One', tag:'Rounded · Bold', word:'Comet', c:3, desc:'Friendlier and slightly lighter than Black, still keeps its rounded contrast character.', q:'Passion+One:wght@700' },
+  { fam:"'Archivo Narrow', sans-serif", w:700, name:'Archivo Narrow', tag:'Narrow · Bold', word:'Signal', c:2, desc:'A narrow grotesque with mild but genuine contrast — clean, professional, versatile.', q:'Archivo+Narrow:wght@700' },
+  { fam:"'Anton', sans-serif", w:400, name:'Anton', tag:'Condensed · Black', word:'Press', c:1, desc:'The definitive ultra-bold condensed sans — one weight, maximum ink, near-monoline.', q:'Anton' },
+  { fam:"'Saira Condensed', sans-serif", w:900, name:'Saira Condensed', tag:'Condensed · Black', word:'Transit', c:1, desc:'Full-weight condensed grotesque — dense and uniform, very little thick/thin play.', q:'Saira+Condensed:wght@900' },
+  { fam:"'Saira Condensed', sans-serif", w:700, name:'Saira Condensed', tag:'Condensed · Bold', word:'Sliver', c:1, desc:'A slightly lighter cut of the same monoline condensed grotesque.', q:'Saira+Condensed:wght@700' },
+  { fam:"'Oswald', sans-serif", w:700, name:'Oswald', tag:'Condensed · Bold', word:'Metro', c:1, desc:'The web’s most reliable condensed sans at Bold — screen-tested, near-monoline.', q:'Oswald:wght@700' },
+  { fam:"'Bebas Neue', sans-serif", w:400, name:'Bebas Neue', tag:'Condensed · Caps', word:'Poster', c:1, desc:'All-caps only, one heavy weight by design — a poster-headline staple everywhere.', q:'Bebas+Neue' },
+];
+
+const grid = document.getElementById('grid');
+
+fonts.forEach((f, i) => {
+  const importLine = `@import url('https://fonts.googleapis.com/css2?family=${f.q}&display=swap');`;
+  const labels = {5:'Extreme', 4:'Very High', 3:'High', 2:'Medium', 1:'Low (monoline)'};
+  let bars = '';
+  for (let b = 1; b <= 5; b++) bars += `<i class="${b <= f.c ? 'on' : ''}"></i>`;
+
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="card-top">
+      <span class="num">${String(i+1).padStart(2,'0')}</span>
+      <span class="tag">${f.tag}</span>
+    </div>
+    <div class="specimen" style="font-family:${f.fam};font-weight:${f.w}">${f.word}</div>
+    <div class="meter">
+      <span class="bars">${bars}</span>
+      <span>Contrast · ${labels[f.c]}</span>
+    </div>
+    <div class="meta">
+      <div class="name">${f.name}</div>
+      <div class="desc">${f.desc}</div>
+    </div>
+    <div class="import">
+      <code title="${importLine}">${importLine}</code>
+      <button class="copy" data-import="${importLine.replace(/"/g,'&quot;')}">Copy</button>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+grid.addEventListener('click', (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  navigator.clipboard.writeText(btn.dataset.import).then(() => {
+    const old = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  });
+});
+</script>
+
+</body>
+</html>
